@@ -274,6 +274,35 @@ texto_total = Entry(panel_costos,
                            textvariable=var_total)
 texto_total.grid(row=2, column=3, padx=41)
 
+# botones
+botones = ['total', 'recibo', 'guardar', 'resetear']
+botones_creados = []
+
+columnas = 0
+for boton in botones:
+    boton = Button(panel_botones,
+                   text=boton.title(),
+                   font=('Dosis', 14, 'bold'),
+                   fg='white',
+                   bg='azure4',
+                   bd=1,
+                   width=6)
+
+    botones_creados.append(boton)
+
+    boton.grid(row=0,
+               column=columnas)
+    columnas += 1
+
+# area de recibo
+texto_recibo = Text(panel_recibo,
+                    font=('Dosis', 12, 'bold'),
+                    bd=1,
+                    width=42,
+                    height=10)
+texto_recibo.grid(row=0,
+                  column=0)
+
 
 # Evitar que la pantalla se cierre
 aplicacion.mainloop()
