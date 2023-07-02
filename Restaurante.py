@@ -70,6 +70,8 @@ lista_postres = ['helado', 'fruta', 'brownies', 'flan', 'mousse', 'pastel1', 'pa
 
 # generar items comida
 variables_comida = []
+cuadros_comida = []
+texto_comida = []
 contador = 0
 for comida in lista_comidas:
     # crear checkbutton
@@ -85,10 +87,26 @@ for comida in lista_comidas:
     comida.grid(row=contador,
                 column=0,
                 sticky=W,)
+
+    # crear los cuadros de entrada
+    cuadros_comida.append('')
+    texto_comida.append('')
+    texto_comida[contador] = StringVar()
+    texto_comida[contador].set('0')
+    cuadros_comida[contador] = Entry(panel_comidas,
+                                     font=('Dosis', 18, 'bold'),
+                                     bd=1,
+                                     width=6,
+                                     state=DISABLED,
+                                     textvariable=texto_comida[contador])
+    cuadros_comida[contador].grid(row=contador,
+                                  column=1)
     contador += 1
 
 # generar items bebidas
 variables_bebida = []
+cuadros_bebida = []
+texto_bebida = []
 contador = 0
 for bebida in lista_bebidas:
     # crear checkbutton
@@ -104,10 +122,27 @@ for bebida in lista_bebidas:
     bebida.grid(row=contador,
                 column=0,
                 sticky=W,)
+
+    # crear los cuadros de entrada
+    cuadros_bebida.append('')
+    texto_bebida.append('')
+    texto_bebida[contador] = StringVar()
+    texto_bebida[contador].set('0')
+    cuadros_bebida[contador] = Entry(panel_bebidas,
+                                     font=('Dosis', 18, 'bold'),
+                                     bd=1,
+                                     width=6,
+                                     state=DISABLED,
+                                     textvariable=texto_bebida[contador])
+    cuadros_bebida[contador].grid(row=contador,
+                                  column=1)
+
     contador += 1
 
 # generar items postres
 variables_postre = []
+cuadros_postres = []
+texto_postres = []
 contador = 0
 for postre in lista_postres:
     # crear checkbutton
@@ -123,6 +158,21 @@ for postre in lista_postres:
     postre.grid(row=contador,
                 column=0,
                 sticky=W,)
+
+    # crear los cuadros de entrada
+    cuadros_postres.append('')
+    texto_postres.append('')
+    texto_postres[contador] = StringVar()
+    texto_postres[contador].set('0')
+    cuadros_postres[contador] = Entry(panel_postres,
+                                      font=('Dosis', 18, 'bold'),
+                                      bd=1,
+                                      width=6,
+                                      state=DISABLED,
+                                      textvariable=texto_postres[contador])
+    cuadros_postres[contador].grid(row=contador,
+                                   column=1)
+
     contador += 1
 
 # Evitar que la pantalla se cierre
